@@ -39,24 +39,14 @@ public final class SimpleGUI {
         frame.setContentPane(panel);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        button1.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                SimpleGUI.this.controller.setString(field.getText());
-                SimpleGUI.this.controller.printString();
-            }
-            
+        button1.addActionListener(e -> {
+            SimpleGUI.this.controller.setString(field.getText());
+            SimpleGUI.this.controller.printString();
         });
-
-        button2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                var list = SimpleGUI.this.controller.getPrintedStrings();
-                textArea.setText(list.toString());
-            }
-            
+        
+        button2.addActionListener(e -> {
+            var list = SimpleGUI.this.controller.getPrintedStrings();
+            textArea.setText(list.toString());
         });
     }
 
